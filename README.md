@@ -1,4 +1,10 @@
-# Home
+---
+cover: >-
+  https://images.unsplash.com/photo-1544035299-57d46d4a70e8?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw1fHxyZWR3b29kfGVufDB8fHx8MTY0NzQ3MDI3MQ&ixlib=rb-1.2.1&q=85
+coverY: 2763.378299120235
+---
+
+# Welcome to Redwood!
 
 Redwood is a **highly-configurable, distributed, realtime database** that manages a state tree shared among many peers. Imagine something like a Redux store, but distributed across all users of an application, that offers offline editing and is resilient to poor connectivity.
 
@@ -52,6 +58,22 @@ Learn the fundamentals of MyProduct to get a deeper understanding of our main fe
 [merge-resolvers.md](fundamentals/merge-resolvers.md)
 {% endcontent-ref %}
 
-{% hint style="info" %}
-**Good to know:** Splitting your product into fundamental concepts, objects, or areas can be a great way to let readers deep dive into the concepts that matter most to them. Combine guides with this approach to 'fundamentals' and you're well on your way to great documentation!
-{% endhint %}
+{% content-ref url="fundamentals/validators.md" %}
+[validators.md](fundamentals/validators.md)
+{% endcontent-ref %}
+
+{% content-ref url="fundamentals/nelson-linked-json.md" %}
+[nelson-linked-json.md](fundamentals/nelson-linked-json.md)
+{% endcontent-ref %}
+
+{% content-ref url="fundamentals/storing-files-in-the-tree.md" %}
+[storing-files-in-the-tree.md](fundamentals/storing-files-in-the-tree.md)
+{% endcontent-ref %}
+
+{% content-ref url="fundamentals/peer-to-peer-communications.md" %}
+[peer-to-peer-communications.md](fundamentals/peer-to-peer-communications.md)
+{% endcontent-ref %}
+
+{% content-ref url="fundamentals/state-uris.md" %}
+[state-uris.md](fundamentals/state-uris.md)
+{% endcontent-ref %}

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README.md)
+* [Welcome to Redwood!](README.md)
 
 ## Guides
 
