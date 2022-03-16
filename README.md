@@ -1,69 +1,74 @@
-# Redwood
+# 🌲 Redwood
 
-{% hint style="info" %}
-**Good to know:** providing a brief overview of your product and its core use cases is a great place to start with product docs. Your product might seem obvious to you – you made it! However, to others, even folks who are trying your product after reading your site or getting a sales demo, it can still be unclear. This is your chance to clarify your product and set the right expectations!
-{% endhint %}
+Redwood is a **highly-configurable, distributed, realtime database** that manages a state tree shared among many peers. Imagine something like a Redux store, but distributed across all users of an application, that offers offline editing and is resilient to poor connectivity.
 
-Here are a couple of examples of succinct overviews from products with really great docs:
+Redwood is also an **application server**. Developers can store and update assets (HTML, Javascript, images) directly in the state tree. For many types of applications, you may not need a separate backend server at all.
 
-> Loom is a video messaging tool that helps you get your message across through instantly shareable videos.
->
-> With Loom, you can record your camera, microphone, and desktop simultaneously. Your video is then instantly available to share through Loom's patented technology.
->
-> — From the [Loom Docs](https://support.loom.com/hc/en-us/articles/360002158057-What-is-Loom-)
+Its flexibility allows developers to use a single, simple programming model to create many divergent classes of applications:
 
-> The Mailchimp Marketing API provides programmatic access to Mailchimp data and functionality, allowing developers to build custom features to do things like sync email activity and campaign analytics with their database, manage audiences and campaigns, and more.
->
-> — From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
+* Traditional web applications
+* Realtime collaborative document editors
+* Peer-to-peer encrypted messaging
+* Blockchains
+* Git-style version control systems
 
 ## Getting Started
 
-**Got 2 minutes?** Check out a video overview of our product:
+### Installing Redwood
 
-{% embed url="https://www.loom.com/share/3bfa83acc9fd41b7b98b803ba9197d90" %}
+There are three methods for setting up a local Redwood node.
 
-{% hint style="info" %}
-**Good to know:** A succinct video overview is a great way to introduce folks to your product. Embed a Loom, Vimeo or YouTube video and you're good to go! We love this video from the fine folks at [Loom](https://loom.com) as a perfect example of a succinct feature overview.
-{% endhint %}
+**Download binary from Github**
+
+Pre-compiled binaries are available for all platforms (Mac, Linux, Windows) at [https://github.com/redwood/redwood/releases](https://github.com/redwood/redwood/releases). These binaries are built via Github Actions, although this does not guarantee that they are safe to use.
+
+**Build from source**
+
+Requires Go 1.18. See the following resources to install Go:
+
+* [https://go.dev/dl/](https://go.dev/dl/)
+* [https://go.dev/doc/install](https://go.dev/doc/install)
+
+Once Go is set up, run the following commands to clone the repository and build the Redwood binary:
+
+```shell
+git clone https://github.com/redwood/redwood
+cd redwood/embed
+yarn && yarn build
+cd ../cmd/redwood
+go build .
+```
 
 ### Guides: Jump right in
 
 Follow our handy guides to get started on the basics as quickly as possible:
 
-{% content-ref url="guides/creating-your-first-project.md" %}
-[creating-your-first-project.md](guides/creating-your-first-project.md)
+{% content-ref url="guides/creating-your-first-project-vanilla-js.md" %}
+[creating-your-first-project-vanilla-js.md](guides/creating-your-first-project-vanilla-js.md)
 {% endcontent-ref %}
 
-{% content-ref url="guides/creating-your-first-task.md" %}
-[creating-your-first-task.md](guides/creating-your-first-task.md)
+{% content-ref url="guides/creating-your-first-project-react.md" %}
+[creating-your-first-project-react.md](guides/creating-your-first-project-react.md)
 {% endcontent-ref %}
-
-{% content-ref url="guides/advanced-permissions.md" %}
-[advanced-permissions.md](guides/advanced-permissions.md)
-{% endcontent-ref %}
-
-{% hint style="info" %}
-**Good to know:** your product docs aren't just a reference of all your features! use them to encourage folks to perform certain actions and discover the value in your product.
-{% endhint %}
 
 ### Fundamentals: Dive a little deeper
 
 Learn the fundamentals of MyProduct to get a deeper understanding of our main features:
 
-{% content-ref url="fundamentals/projects.md" %}
-[projects.md](fundamentals/projects.md)
+{% content-ref url="fundamentals/what-is-a-state-tree.md" %}
+[what-is-a-state-tree.md](fundamentals/what-is-a-state-tree.md)
 {% endcontent-ref %}
 
-{% content-ref url="fundamentals/members.md" %}
-[members.md](fundamentals/members.md)
+{% content-ref url="fundamentals/subscriptions.md" %}
+[subscriptions.md](fundamentals/subscriptions.md)
 {% endcontent-ref %}
 
-{% content-ref url="fundamentals/task-lists.md" %}
-[task-lists.md](fundamentals/task-lists.md)
+{% content-ref url="fundamentals/transactions.md" %}
+[transactions.md](fundamentals/transactions.md)
 {% endcontent-ref %}
 
-{% content-ref url="fundamentals/tasks.md" %}
-[tasks.md](fundamentals/tasks.md)
+{% content-ref url="fundamentals/merge-resolvers.md" %}
+[merge-resolvers.md](fundamentals/merge-resolvers.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
