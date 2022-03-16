@@ -20,3 +20,5 @@
 * [Storing files in the tree](fundamentals/storing-files-in-the-tree.md)
 * [Peer-to-peer communications](fundamentals/peer-to-peer-communications.md)
 * [State URIs](fundamentals/state-uris.md)
+* [Protocols](fundamentals/protocols.md)
+* [Transports](fundamentals/transports.md)
