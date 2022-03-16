@@ -1,4 +1,4 @@
-# 🌲 Redwood
+# Home
 
 Redwood is a **highly-configurable, distributed, realtime database** that manages a state tree shared among many peers. Imagine something like a Redux store, but distributed across all users of an application, that offers offline editing and is resilient to poor connectivity.
 
