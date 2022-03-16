@@ -12,36 +12,17 @@ Its flexibility allows developers to use a single, simple programming model to c
 * Blockchains
 * Git-style version control systems
 
-## Getting Started
-
-### Installing Redwood
-
-There are three methods for setting up a local Redwood node.
-
-**Download binary from Github**
-
-Pre-compiled binaries are available for all platforms (Mac, Linux, Windows) at [https://github.com/redwood/redwood/releases](https://github.com/redwood/redwood/releases). These binaries are built via Github Actions, although this does not guarantee that they are safe to use.
-
-**Build from source**
-
-Requires Go 1.18. See the following resources to install Go:
-
-* [https://go.dev/dl/](https://go.dev/dl/)
-* [https://go.dev/doc/install](https://go.dev/doc/install)
-
-Once Go is set up, run the following commands to clone the repository and build the Redwood binary:
-
-```shell
-git clone https://github.com/redwood/redwood
-cd redwood/embed
-yarn && yarn build
-cd ../cmd/redwood
-go build .
-```
-
 ### Guides: Jump right in
 
 Follow our handy guides to get started on the basics as quickly as possible:
+
+{% content-ref url="guides/getting-started.md" %}
+[getting-started.md](guides/getting-started.md)
+{% endcontent-ref %}
+
+{% content-ref url="guides/configuration.md" %}
+[configuration.md](guides/configuration.md)
+{% endcontent-ref %}
 
 {% content-ref url="guides/creating-your-first-project-vanilla-js.md" %}
 [creating-your-first-project-vanilla-js.md](guides/creating-your-first-project-vanilla-js.md)

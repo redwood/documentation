@@ -4,8 +4,10 @@
 
 ## Guides
 
-* [Creating your first project: vanilla JS](guides/creating-your-first-project-vanilla-js.md)
-* [Creating your first project: React](guides/creating-your-first-project-react.md)
+* [🚀 Getting Started](guides/getting-started.md)
+* [⚙ Configuration](guides/configuration.md)
+* [🍦 Creating your first project: vanilla JS](guides/creating-your-first-project-vanilla-js.md)
+* [⚛ Creating your first project: React](guides/creating-your-first-project-react.md)
 
 ## Fundamentals
 
