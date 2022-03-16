@@ -39,7 +39,16 @@ go build .
 
 **Regular binary**
 
-****
+Redwood accepts several command-line flags:
+
+```
+-c, --config            location of config file      (required)
+-p, --password-file     location of password file    (required)
+-k, --libp2p-key-file   location of libp2p key file
+--gui                   enable terminal UI
+```
+
+Most of the time, however, you will only need to specify `-c` and `-p`.
 
 **Docker**
 
