@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 8488edf2d7eec2a28d035b36f3df130811a29bed Bryn Bellomy <bryn@signals.io> 1614713911 -0600	clone: from https://github.com/slatedocs/slate
-8488edf2d7eec2a28d035b36f3df130811a29bed 8488edf2d7eec2a28d035b36f3df130811a29bed Bryn Bellomy <bryn@signals.io> 1616721627 -0500	checkout: moving from main to gh-pages
-8488edf2d7eec2a28d035b36f3df130811a29bed 8488edf2d7eec2a28d035b36f3df130811a29bed Bryn Bellomy <bryn@signals.io> 1616721757 -0500	checkout: moving from gh-pages to documentation
-8488edf2d7eec2a28d035b36f3df130811a29bed e6dfe4cb0dc537cf93e75a69def00dc52abef4ed Bryn Bellomy <bryn@signals.io> 1616722632 -0500	commit: Configure Github Actions for docs
