@@ -18,7 +18,7 @@
   * [Merge resolvers](fundamentals/state/merge-resolvers.md)
   * [Validators](fundamentals/state/validators.md)
   * [NelSON (linked JSON)](fundamentals/state/nelson-linked-json.md)
-* [Storing files](fundamentals/storing-files.md)
+* [Storing files (blobs)](fundamentals/storing-files.md)
 * [Authentication and identity](fundamentals/authentication-and-identity.md)
 * [Peer-to-peer communications](fundamentals/peer-to-peer-communications.md)
 * [Protocols](fundamentals/protocols/README.md)

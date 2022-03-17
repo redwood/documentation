@@ -1,14 +1,14 @@
 # Storing files (blobs)
 
-In addition to serving JSON state, Redwood nodes can find, fetch, and serve files, much like a BitTorrent client or an IPFS node. In fact, thanks to the magic of [NelSON transclusion](state/nelson-linked-json.md), you can actually think of these files as _part of the state_.
-
-Like with IPFS and BitTorrent, files are "content-addressed," i.e., they are identified and referred to by the SHA3 hash of their contents.
-
-When your node becomes aware of a file that has been transcluded into a state tree, it queries the peer-to-peer network until it finds peers that can serve that file.
-
 {% hint style="info" %}
 Redwood's name for files is "blobs".
 {% endhint %}
+
+In addition to serving JSON state, Redwood nodes can find, fetch, and serve files, much like a BitTorrent client or an IPFS node. In fact, thanks to the magic of [NelSON transclusion](state/nelson-linked-json.md), you can actually think of these files as _part of the state_.
+
+Like with IPFS and BitTorrent, files are "content-addressed," i.e., they are identified and referred to by the hash of their contents. Redwood uses the Keccak-256 algorithm, which we colloquially refer to as "SHA3."
+
+When your node becomes aware of a file that has been transcluded into a state tree, it queries the peer-to-peer network until it finds peers that can serve that file, and then downloads it.
 
 ## Files as state
 
