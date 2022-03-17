@@ -1,5 +1,48 @@
 # ⚙ Configuration
 
+## System configuration
+
+### IPv6
+
+Configuring IPv6 is likely to improve your node's connectivity with other nodes, as long as they're configured to use it as well.
+
+#### Linux
+
+If you are running Redwood as a simple binary (as opposed to within a Docker container) on a Linux machine, the process is straightforward.
+
+First, add the following lines to `/etc/sysctl.conf`:
+
+```
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+```
+
+Then, run the following command to activate your changes:
+
+```
+sysctl -p
+ip6tables -t nat -A POSTROUTING -s fd00::/80 ! -o docker0 -j MASQUERADE
+```
+
+#### Docker
+
+If the node is running within a Docker container, two additional steps are required. Create a file called `/etc/docker/daemon.json` containing the following:
+
+```json
+{
+    "ipv6": true,
+    "fixed-cidr-v6": "fd00::/80"
+}
+```
+
+Then, run the following command to activate your changes:
+
+```
+systemctl restart docker
+```
+
+## Redwood configuration
+
 When Redwood starts for the first time, it will create a configuration file called `.redwoodrc` in the location you specified with the `-c` (or `--config`) flag. It's recommended that you stop Redwood and investigate this file to ensure that your node is configured as you wish.
 
 `.redwoodrc` is a YAML file with the following structure:
