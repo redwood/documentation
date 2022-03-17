@@ -27,5 +27,5 @@
   * [protohush](fundamentals/protocols/protohush.md)
   * [prototree](fundamentals/protocols/prototree.md)
 * [Transports](fundamentals/transports/README.md)
-  * [Braid HTTP](fundamentals/transports/braid-http.md)
-  * [Libp2p](fundamentals/transports/libp2p.md)
+  * [🧬 Braid HTTP](fundamentals/transports/braid-http.md)
+  * [🧑🤝🧑 Libp2p](fundamentals/transports/libp2p.md)
