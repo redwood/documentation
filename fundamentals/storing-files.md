@@ -41,9 +41,116 @@ Instead of treating a blob as a singular stream of bytes, Redwood stores files i
 
 To facilitate #2, Redwood uses a technique called "Rabin chunking" (or "Rabin-Karp chunking"), a form of content-defined chunking. As opposed to using a fixed chunk size, this technique is capable of finding the boundaries of the edit (in other words, the updated chunk) even without knowledge of the previous layout of the file.
 
+## Examples
 
+### Redwood.js (vanilla JS)
 
-**Recommended reading:**
+```javascript
+let client = Redwood.createPeer({ httpHost: 'http://localhost:8080' })
+let { sha3 } = await client.storeBlob(fs.createReadStream('my-file.txt'))
+
+await client.put({
+    stateURI: 'my.app/foo',
+    patches: [
+        `.files["my-file.txt"] = ` + Redwood.utils.JSON.stringify({
+            'Content-Type': 'link',
+            'value':        `blob:sha3:${sha3}`,
+        })
+    ]
+})
+```
+
+### Go (embedded)
+
+This example assumes that you have embedded `redwood.dev/cmd/cmdutils.App` into your Go application and are interacting with the Redwood node in-process.
+
+```go
+file, err := os.Open("my-file.txt")
+if err != nil {
+    return err
+}
+defer file.Close()
+
+_, sha3, err := app.BlobStore.StoreBlob(file)
+if err != nil {
+    return err
+}
+
+valueBytes, err := json.Marshal(map[string]interface{}{
+    "Content-Type": "link",
+    "value": "blob:sha3:" + sha3.Hex(),
+})
+if err != nil {
+    return err
+}
+
+err = app.TreeProto.SendTx(ctx, tree.Tx{
+    StateURI: "my.app/foo",
+    Patches:  []tree.Patch{
+        {
+            Keypath: state.Keypath("files").Pushs("my-file.txt"),
+            ValueJSON: valueBytes,
+        },
+    },
+})
+if err != nil {
+    return err
+}
+
+```
+
+### Go (HTTP)
+
+```go
+sigkeys, err := crypto.GenerateSigKeypair()
+if err != nil {
+    return err
+}
+
+client, err := braidhttp.NewLightClient("http://some.redwood.node:8080", sigkeys, nil, false)
+if err != nil {
+    return err
+}
+
+err = client.Authorize()
+if err != nil {
+    return err
+}
+
+file, err := os.Open("my-file.txt")
+if err != nil {
+    return err
+}
+defer file.Close()
+
+resp, err := client.StoreBlob(file)
+if err != nil {
+    return err
+}
+
+valueBytes, err := json.Marshal(map[string]interface{}{
+    "Content-Type": "link",
+    "value": "blob:sha3:" + resp.SHA3.Hex(),
+})
+if err != nil {
+    return err
+}
+
+err = client.Put(ctx, tree.Tx{
+    StateURI: "my.app/foo",
+    Patches:  []tree.Patch{
+        {
+            Keypath: state.Keypath("files").Pushs("my-file.txt"),
+            ValueJSON: valueBytes,
+        },
+    },
+})
+if err != nil {
+    return err
+}
+```
+
+## **Recommended reading**
 
 {% embed url="https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm" %}
 
