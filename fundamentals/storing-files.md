@@ -43,7 +43,7 @@ To facilitate #2, Redwood uses a technique called "Rabin chunking" (or "Rabin-Ka
 
 ## Examples
 
-### Redwood.js (vanilla JS)
+### Redwood.js
 
 ```javascript
 let client = Redwood.createPeer({ httpHost: 'http://localhost:8080' })
