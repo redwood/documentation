@@ -40,7 +40,7 @@ Follow our handy guides to get started on the basics as quickly as possible:
 
 ### Fundamentals: Dive a little deeper
 
-Learn the fundamentals of MyProduct to get a deeper understanding of our main features:
+Learn the fundamentals of Redwood to get a deeper understanding of our main features:
 
 {% content-ref url="fundamentals/state/" %}
 [state](fundamentals/state/)
